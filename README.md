@@ -1,1 +1,6 @@
-# Olympic-Rings
+Olympic Rings simulation
+
+Group members
+
+1. SHALOM GIRMA UGR/0528/12 SECTION-2
+2. TSEGA YAEKOB UGR/8465/12 SECTION-2
