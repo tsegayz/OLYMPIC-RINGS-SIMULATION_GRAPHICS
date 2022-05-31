@@ -24,7 +24,28 @@ def draw_circle(max, xorig, yorig, rad):
         verts.append(int(x))
         verts.append(int(y))
 
+
+def draw_circle1(max, xorig, yorig, rad):
+
+    global verts1
+    verts1 = []
+    angle = 360 / max
+    
+    for i in range(max):
+        angle_rad = ( angle * i) * (math.pi/180)
+        cosine = math.cos(angle_rad) 
+        sine = math.sin(angle_rad)
+        
+        x = cosine *rad - sine*rad + xorig
+        y = sine *rad + cosine*rad + yorig
+        glPointSize(2)
+        verts1.append(int(x))
+        verts1.append(int(y))
+
+
 draw_circle(500, 220, 350, 50)
+draw_circle1(500, 390, 350, 50)
+
 
 
 z = 0
@@ -41,6 +62,11 @@ def update(t):
             glEnd()
 
             z+=2
+    if(z < len(verts1) - 1):
+            glColor(1.0, 1.0, 1.0)
+            pyglet.graphics.draw(1, pyglet.gl.GL_POINTS, ('v2i', (verts1[z], verts1[z+1])))
+            z+=2
+
 
 pyglet.clock.schedule_interval(update, 1/120)
 
