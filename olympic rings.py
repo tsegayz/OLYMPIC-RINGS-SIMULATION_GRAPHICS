@@ -2,7 +2,7 @@ import pyglet
 import math
 from OpenGL.GL import *
 from OpenGL.GLU import *
-import numpy as np 
+
 
 window = pyglet.window.Window(800,600,"Olyompic Rings Simulation")
 
