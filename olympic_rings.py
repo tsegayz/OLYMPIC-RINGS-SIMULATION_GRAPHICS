@@ -152,13 +152,13 @@ def update(t):
         z += 2
 
 
-pyglet.clock.schedule_interval(update, 1/120)
-
-pyglet.app.run()
-
 draw_circle(500, 220, 350, 50)
 draw_circle1(500, 390, 350, 50)
 draw_circle2(500, 300, 270, 50)
 draw_circle3(500, 480, 270, 50)
 draw_circle4(500, 565, 350, 50)
 
+
+pyglet.clock.schedule_interval(update, 1/120)
+
+pyglet.app.run()
