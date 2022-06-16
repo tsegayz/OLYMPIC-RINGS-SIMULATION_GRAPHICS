@@ -96,11 +96,11 @@ def draw_circle4(max, xorig, yorig, rad):
         verts4.append(int(y))
 
 
-draw_circle(500, 220, 350, 50)
-draw_circle1(500, 390, 350, 50)
-draw_circle2(500, 300, 270, 50)
-draw_circle3(500, 480, 270, 50)
-draw_circle4(500, 565, 350, 50)
+# draw_circle(500, 220, 350, 50)
+# draw_circle1(500, 390, 350, 50)
+# draw_circle2(500, 300, 270, 50)
+# draw_circle3(500, 480, 270, 50)
+# draw_circle4(500, 565, 350, 50)
 
 
 z = 0
@@ -117,31 +117,48 @@ def update(t):
         glBegin(GL_POINTS)
         glVertex2f(verts[z], verts[z+1])
         glEnd()
-
         z += 2
+
     if(z < len(verts1) - 1):
+        
         glColor(1.0, 1.0, 1.0)
-        pyglet.graphics.draw(1, pyglet.gl.GL_POINTS,
-                             ('v2i', (verts1[z], verts1[z+1])))
+        glBegin(GL_POINTS)
+        glVertex2f(verts1[z], verts1[z+1])
+        glEnd()
         z += 2
+       
     if(z < len(verts2) - 1):
+
         glColor(1.0, 1.0, 0.0)
-        pyglet.graphics.draw(1, pyglet.gl.GL_POINTS,
-                             ('v2i', (verts2[z], verts2[z+1])))
+        glBegin(GL_POINTS)
+        glVertex2f(verts2[z], verts2[z+1])
+        glEnd()
         z += 2
+
     if(z < len(verts3) - 1):
+
         glColor(0.0, 1.0, 0.0)
-        pyglet.graphics.draw(1, pyglet.gl.GL_POINTS,
-                             ('v2i', (verts3[z], verts3[z+1])))
+        glBegin(GL_POINTS)
+        glVertex2f(verts3[z], verts3[z+1])
+        glEnd()
         z += 2
-        if(z < len(verts4) - 1):
-            glColor(1.0, 0.0, 0.0)
-            pyglet.graphics.draw(1, pyglet.gl.GL_POINTS, ('v2i', (verts4[z], verts4[z+1])))
-            z+=2
 
+    if(z < len(verts4) - 1):
 
+        glColor(1.0, 0.0, 0.0)
+        glBegin(GL_POINTS)
+        glVertex2f(verts4[z], verts4[z+1])
+        glEnd()
+        z += 2
 
 
 pyglet.clock.schedule_interval(update, 1/120)
 
 pyglet.app.run()
+
+draw_circle(500, 220, 350, 50)
+draw_circle1(500, 390, 350, 50)
+draw_circle2(500, 300, 270, 50)
+draw_circle3(500, 480, 270, 50)
+draw_circle4(500, 565, 350, 50)
+
